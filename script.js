@@ -37,25 +37,11 @@
 		-----*/
 		createTask: function() {
 			var input = document.getElementById('new-task');
-
 			if(input.value !== '') { // if the textbox is not empty
 				App.data.push(input.value); // add new task to data array
 				input.value = ''; // clear textbox
 
 				App.getAllTasks(); // refresh the list
-			}
-		},
-
-		/*-----
-			Function: Determines which direction the task is going
-		-----*/
-		getTask: function(id) {
-			var tasks = App.Utility.getElementByAttribute('data-id'); // gets all elements with 'data-id' attribute
-
-			for(var i = 0; i < tasks.length; i++) { // loop through the array of elements
-				if(tasks[i] == id) { // if the id specified is the same as the one in the array
-					return tasks[i]; // return that element
-				}
 			}
 		},
 
