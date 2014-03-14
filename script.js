@@ -28,11 +28,6 @@
 		moving: false,
 
 		/*-----
-			Variable: The task element that is being moved
-		-----*/
-		element: '',
-
-		/*-----
 			Function: Gets all tasks
 		-----*/
 		createTask: function() {
