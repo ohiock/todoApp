@@ -28,6 +28,11 @@
 		moving: false,
 
 		/*-----
+			Variable: The task element that is being moved
+		-----*/
+		element: '',
+
+		/*-----
 			Function: Gets all tasks
 		-----*/
 		createTask: function() {
@@ -73,6 +78,7 @@
 					e.target.parentNode.className += ' moving'; // add class moving
 
 					App.moving = true; // the task is now moving
+					App.element = e.target.parentNode;
 				});
 
 				task.children[1].addEventListener('mouseup', function(e) {
@@ -91,7 +97,7 @@
 		-----*/
 		moveTask: function(e) {
 			if(App.moving == true) { // if task is being moved
-				var task = e.target.parentNode; // set task to be moved
+				var task = App.element; // set task to be moved
 
 				task.style.position = 'fixed'; // change element to fixed position
 				task.style.top = e.clientY - 15 + 'px'; // set y coordinate
